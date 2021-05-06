@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">IP</string>
+
+    <string-array name="userTypes">
+        <item>ADMIN</item>
+        <item>SECRETARY</item>
+        <item>STUDENT</item>
+    </string-array>
+
+</resources>
