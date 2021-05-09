@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Please enter both a username and a password!", Toast.LENGTH_SHORT).show();
             return;
         }
+
         /*
         Login login = new Login(usr, pass);
 
@@ -113,15 +114,49 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         */
-        Constants.setUser(new User(
-                "a",
-                "b",
-                new UserType(UserTypes.STUDENT.name()),
-                "boss",
-                "mondial",
-                "",
-                1
-        ));
+        User user;
+        switch (pass) {
+            case "a":
+                user = new User(
+                        "a",
+                        "a",
+                        new UserType(UserTypes.STUDENT.name()),
+                        "student",
+                        "student",
+                        "",
+                        1
+                );
+                break;
+
+            case "b":
+                user = new User(
+                        "a",
+                        "b",
+                        new UserType(UserTypes.SECRETARY.name()),
+                        "secretar",
+                        "secretar",
+                        "",
+                        1
+                );
+                break;
+
+            case "c":
+                user = new User(
+                        "a",
+                        "c",
+                        new UserType(UserTypes.ADMIN.name()),
+                        "admin",
+                        "admin",
+                        "",
+                        1
+                );
+                break;
+
+            default:
+                Toast.makeText(this, "Invalid password", Toast.LENGTH_SHORT).show();
+                return;
+        }
+        Constants.setUser(user);
         Constants.setToken("");
         Intent loginIntent;
         loginIntent = new Intent(MainActivity.this, Constants.getLoginClass());
