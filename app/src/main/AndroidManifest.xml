@@ -17,6 +17,16 @@
         <activity android:name=".account.PersonalActivity" />
         <activity android:name=".account.ViewPersonalDataActivity" />
         <activity android:name=".student.StudentAccountActivity" />
+        <activity android:name=".admin.ViewActivity" />
+        <activity android:name=".admin.AddUserActivity" />
+        <activity android:name=".admin.GrupaMenuActivity" />
+        <activity android:name=".admin.SerieMenuActivity" />
+        <activity android:name=".admin.MajorMenuActivity" />
+        <activity android:name=".admin.FacultyMenuActivity" />
+        <activity android:name=".secretary.SecretaryAdministrativeActivity" />
+        <activity android:name=".admin.AdminAdministrativeActivity" />
+        <activity android:name=".secretary.EditStudentActivity" />
+        <activity android:name=".secretary.ViewStudentActivity"            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
