@@ -6,7 +6,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
-    private static final String BASE_URL = "http://aws-backend-ipapp.eba-g7bht3us.eu-central-1.elasticbeanstalk.com/";
+    private static final String BASE_URL = "10.0.2.2:8080";
     private static RetrofitClient mInstance;
     private Retrofit retrofit;
 

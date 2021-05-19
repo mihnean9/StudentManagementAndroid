@@ -10,7 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.idp.studentmanagement.R;
+import com.idp.studentmanagement.admin.AdminAdministrativeActivity;
 import com.idp.studentmanagement.general.Constants;
+import com.idp.studentmanagement.secretary.SecretaryAdministrativeActivity;
 
 
 public class AccountActivity extends AppCompatActivity {
@@ -33,12 +35,12 @@ public class AccountActivity extends AppCompatActivity {
 
     public void openAdministrativeMenu(View view) {
         Intent intent;
-        Toast.makeText(this, "COMING SOON", Toast.LENGTH_SHORT).show();
-       /* if (Constants.getUser().getUserType().getType().equals("ADMIN"))
+        //Toast.makeText(this, "COMING SOON", Toast.LENGTH_SHORT).show();
+        if (Constants.getUser().getUserType().getType().equals("ADMIN"))
             intent = new Intent(this, AdminAdministrativeActivity.class);
         else
             intent = new Intent(this, SecretaryAdministrativeActivity.class);
-        startActivity(intent);*/
+        startActivity(intent);
     }
 
     public void logout(View view) {

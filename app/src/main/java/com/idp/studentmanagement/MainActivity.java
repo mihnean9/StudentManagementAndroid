@@ -62,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        /*
         Login login = new Login(usr, pass);
 
         Call<Token>  call = jsonRequests.postLogin(login);
@@ -113,8 +112,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<Token> call, Throwable t) {
             }
         });
-        */
-        User user;
+        /*User user;
         switch (pass) {
             case "a":
                 user = new User(
@@ -157,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
         }
         Constants.setUser(user);
-        Constants.setToken("");
+        Constants.setToken("");*/
         Intent loginIntent;
         loginIntent = new Intent(MainActivity.this, Constants.getLoginClass());
         startActivity(loginIntent);
