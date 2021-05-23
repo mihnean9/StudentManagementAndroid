@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,6 +33,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
     private EditText username;
     private EditText password;
 
@@ -64,11 +66,12 @@ public class MainActivity extends AppCompatActivity {
 
         Login login = new Login(usr, pass);
 
-/*        Call<Token>  call = jsonRequests.postLogin(login);
+        Call<Token>  call = jsonRequests.postLogin(login);
         call.enqueue(new Callback<Token>() {
             @Override
             public void onResponse(Call<Token> call, Response<Token> response) {
                 if (!response.isSuccessful()) {
+                    Log.d(TAG, "incorrect login info");
                     String err = "Incorrect login info!";
                     Toast.makeText(MainActivity.this, err, Toast.LENGTH_SHORT).show();
                     return;
@@ -83,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                         User currentUser = response.body();
 
                         if (currentUser == null) {
+                            Log.d(TAG, "failed to return a valid user");
                             Toast.makeText(MainActivity.this, "Internal error", Toast.LENGTH_SHORT).show();
                             return;
                         }
@@ -103,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<User> call, Throwable t) {
+                        Log.d(TAG, "user call failed " + t.getMessage());
                     }
                 });
 
@@ -110,54 +115,59 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Token> call, Throwable t) {
+                Log.d(TAG, "login call failed " + t.getMessage());
             }
-        });*/
-        User user;
-        switch (pass) {
-            case "a":
-                user = new User(
-                        "a",
-                        "a",
-                        new UserType(UserTypes.STUDENT.name()),
-                        "student",
-                        "student",
-                        "",
-                        1
-                );
-                break;
+        });
 
-            case "b":
-                user = new User(
-                        "a",
-                        "b",
-                        new UserType(UserTypes.SECRETARY.name()),
-                        "secretar",
-                        "secretar",
-                        "",
-                        1
-                );
-                break;
+        // Constants.DEBUG = true;
+       /* if (Constants.DEBUG = true) {
+            User user;
+            switch (pass) {
+                case "a":
+                    user = new User(
+                            "a",
+                            "a",
+                            new UserType(UserTypes.STUDENT.name()),
+                            "student",
+                            "student",
+                            "",
+                            1
+                    );
+                    break;
 
-            case "c":
-                user = new User(
-                        "a",
-                        "c",
-                        new UserType(UserTypes.ADMIN.name()),
-                        "admin",
-                        "admin",
-                        "",
-                        1
-                );
-                break;
+                case "b":
+                    user = new User(
+                            "a",
+                            "b",
+                            new UserType(UserTypes.SECRETARY.name()),
+                            "secretar",
+                            "secretar",
+                            "",
+                            1
+                    );
+                    break;
 
-            default:
-                Toast.makeText(this, "Invalid password", Toast.LENGTH_SHORT).show();
-                return;
-        }
-        Constants.setUser(user);
-        Constants.setToken("");
-        Intent loginIntent;
-        loginIntent = new Intent(MainActivity.this, Constants.getLoginClass());
-        startActivity(loginIntent);
+                case "c":
+                    user = new User(
+                            "a",
+                            "c",
+                            new UserType(UserTypes.ADMIN.name()),
+                            "admin",
+                            "admin",
+                            "",
+                            1
+                    );
+                    break;
+
+                default:
+                    Toast.makeText(this, "Invalid password", Toast.LENGTH_SHORT).show();
+                    return;
+            }
+            Constants.setUser(user);
+            Constants.setToken("");
+            Intent loginIntent;
+            loginIntent = new Intent(MainActivity.this, Constants.getLoginClass());
+            startActivity(loginIntent);
+        }*/
     }
 }

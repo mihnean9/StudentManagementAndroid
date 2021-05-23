@@ -30,6 +30,8 @@ public class Constants {
     public static String viewIntent;
     public static Student currentStudent;
 
+    public static Boolean DEBUG = false;
+
     private Constants() {
         user = new User("", "", null, "", "", "", 0);
         faculties = new ArrayList<>();
