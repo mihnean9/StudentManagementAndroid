@@ -93,4 +93,9 @@ public class ViewStudentActivity extends AppCompatActivity {
         Intent intent = new Intent(this, EditStudentActivity.class);
         startActivity(intent);
     }
+
+    public void editGrades(View view) {
+        Intent intent = new Intent(this, EditGradesActivity.class);
+        startActivity(intent);
+    }
 }

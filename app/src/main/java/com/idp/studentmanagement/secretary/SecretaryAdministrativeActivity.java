@@ -28,7 +28,4 @@ public class SecretaryAdministrativeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ViewStudentActivity.class);
         startActivity(intent);
     }
-
-    public void editGrades(View view) {
-    }
 }

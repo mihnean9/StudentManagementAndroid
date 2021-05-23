@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">IP</string>
+    <string name="app_name">StudentManagement</string>
 
     <string-array name="userTypes">
         <item>ADMIN</item>

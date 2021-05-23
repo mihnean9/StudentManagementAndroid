@@ -1,6 +1,7 @@
 package com.idp.studentmanagement.api;
 
 import com.idp.studentmanagement.objects.Admin;
+import com.idp.studentmanagement.objects.Clasa;
 import com.idp.studentmanagement.objects.Faculty;
 import com.idp.studentmanagement.objects.Grade;
 import com.idp.studentmanagement.objects.Grupa;
@@ -110,8 +111,15 @@ public interface JsonRequests {
     @POST("secretaries")
     Call<Secretary> postSecretary(@Header("Authorization") String token, @Body Secretary secretary);
 
+    @GET("classes")
+    Call<List<Clasa>> getClasses(@Header("Authorization") String token);
+
     @GET("grades/student/{sin}")
     Call<List<Grade>> getGrades(@Path(value = "sin") long sin,
                                 @Header("Authorization") String token);
+
+    @POST("grades")
+    Call<Grade> postGrade(@Header("Authorization") String token,
+                          @Body Grade grade);
 
 }
